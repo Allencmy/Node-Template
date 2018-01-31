@@ -1,0 +1,27 @@
+{
+  "log4js": {
+    "appenders": {
+      "out": {
+        "type": "stdout"
+      },
+      "errors": {
+        "type": "dateFile",
+        "filename": "logs/errors/",
+        "alwaysIncludePattern": true,
+        "pattern": "yyyy-MM-dd.log"
+      },
+      "just-errors": {
+        "type": "logLevelFilter",
+        "appender": "errors",
+        "level": "error"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": ["out"],
+        "level": "debug"
+      }
+    },
+    "pm2": true
+  }
+}
